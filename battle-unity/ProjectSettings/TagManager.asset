@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - iWall
+  - wall
   layers:
   - Default
   - TransparentFX

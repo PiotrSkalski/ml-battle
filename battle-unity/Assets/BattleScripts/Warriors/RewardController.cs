@@ -31,13 +31,13 @@ namespace Examples.Battle.Scripts.Warriors
 
         private void OnWall()
         {
-            _warriorAgent.reward += -1f;
+            _warriorAgent.reward -= 1f;
             _warriorAgent.done = true;
         }
 
         private void OnDead()
         {
-            _warriorAgent.reward += -0.01f;
+            _warriorAgent.reward -= 0.01f;
             _warriorAgent.done = true;
         }
 

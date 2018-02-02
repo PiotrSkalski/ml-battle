@@ -25,7 +25,7 @@ namespace Examples.Battle.Scripts.Warriors.Attack
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.collider.CompareTag("iWall"))
+            if (other.collider.CompareTag("wall"))
             {
                 _lifeController.Attack(1f);
                 OnCollisionWall?.Invoke();

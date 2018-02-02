@@ -23,7 +23,7 @@ namespace Examples.Battle.Scripts.Warriors
             for (int i = 0; i < NumberOfRay; i++)
             {
                 var dir = Quaternion.AngleAxis(i * AngleBetweenRay - _halfAngle, Vector3.up) * transform.forward;
-                Debug.DrawRay(transform.position, dir * RayLenght, Color.magenta);
+                Debug.DrawRay(transform.position + Vector3.up, dir * RayLenght, Color.magenta);
             }
         }
 
@@ -40,9 +40,9 @@ namespace Examples.Battle.Scripts.Warriors
                 var dir = Quaternion.AngleAxis(i * AngleBetweenRay - _halfAngle, Vector3.up) * transform.forward;
 
                 RaycastHit rayInfo;
-                if (Physics.Raycast(transform.position, dir, out rayInfo, RayLenght))
+                if (Physics.Raycast(transform.position + Vector3.up, dir, out rayInfo, RayLenght))
                 {
-                    if (rayInfo.collider.CompareTag("iWall"))
+                    if (rayInfo.collider.CompareTag("wall"))
                     {
                         list.Add(-1f);
                         continue;
