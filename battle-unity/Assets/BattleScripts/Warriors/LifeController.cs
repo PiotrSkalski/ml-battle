@@ -19,6 +19,7 @@ namespace Examples.Battle.Scripts.Warriors
 
             if (_life <= 0f)
             {
+                GetComponent<Animator>().SetBool("dead", true);
                 OnDead?.Invoke();
             }
         }
