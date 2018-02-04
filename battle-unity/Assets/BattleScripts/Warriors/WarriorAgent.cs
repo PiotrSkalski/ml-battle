@@ -77,8 +77,8 @@ namespace Examples.Battle.Scripts.Warriors
             _attack.Attack();
             directionZ *= _eyeController.EyeAngle / _angleAnimatorMove;
 
-            _animator.SetFloat("Forward", directionZ, .5f, Time.deltaTime);
-            _animator.SetFloat("Turn", directionX, .5f, Time.deltaTime);
+            _animator.SetFloat("Forward", directionZ, .5f, Time.fixedDeltaTime);
+            _animator.SetFloat("Turn", directionX, .5f, Time.fixedDeltaTime);
         }
 
         public override void AgentReset()

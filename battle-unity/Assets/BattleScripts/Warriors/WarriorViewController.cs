@@ -8,10 +8,12 @@ namespace Examples.Battle.Scripts.Warriors
         [SerializeField] private GameObject View;
 
         private int _layer;
+        private int _disabledLayer;
 
         private void Awake()
         {
             _layer = View.layer;
+            _disabledLayer = LayerMask.NameToLayer("Ignore Raycast");
         }
 
         public void PlayerEnabled()
@@ -22,7 +24,7 @@ namespace Examples.Battle.Scripts.Warriors
 
         public void PlayerDisabled()
         {
-            View.layer = LayerMask.NameToLayer("Ignore Raycast");
+            View.layer = _disabledLayer;
             StartCoroutine(OffView());
         }
 

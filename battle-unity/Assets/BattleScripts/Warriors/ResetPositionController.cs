@@ -17,9 +17,7 @@ namespace Examples.Battle.Scripts.Warriors
         }
 
         public void Reset()
-        {
-            GetComponent<Animator>().SetBool("dead", false);
-            
+        {            
             transform.parent.position = _spawner.GetPosition(index);
             transform.rotation = Quaternion.Euler(_rotation);
 
